@@ -7,6 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Title -->
     <title></title>
+    <!-- Youtube Repeater Background Music -->
+    <iframe src="http://www.youtuberepeater.com/watch?v=P3ZrN-m7VJA&name=Diablo+2+Soundtrack+Full" frameborder="0" width="0" height="0" allowfullscreen></iframe>
     <!-- Boot Strap CSS-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
     <!-- Animate Stylesheet -->
@@ -24,32 +26,50 @@
   <body>
     <div id="app">
         <div class="header">
-            <h1>A Battle Game!</h1>
+            <h1 v-if="!isRunning">Only One Will Walk Out Alive!</h1>
+            <h1 v-else>Give Them No Mercy!</h1>
         </div>
         <div>
-            <div class="health-bar">
+            <img v-if="!isRunning" class="img-fluid mx-auto" src="img/soldier1.png">
+            <div v-else class="health-bar">
                 <img class="img-fluid mx-auto" src="img/soldier.png">
-                <h2>Player Health</h2>
+                <h2>Warrior</h2>
                 <div id="player-health" class="health-bar-inner" v-bind:style="{ width: playerHealth + '%' }">
                     <h4>{{ playerHealth }}</h4>
                 </div>
             </div>
-            <div class="health-bar">
+            <h1 v-if="!isRunning">Do You Have The Courage?</h1>
+            <div v-else class="health-bar">
                 <img class="img-fluid mx-auto" src="img/monster.png">
-                <h2>Monster Health</h2>
-                <div class="health-bar-inner" v-bind:style="{ width: monsterHealth + '%' }">
+                <h2>Monster</h2>
+                <div id="monster-health" class="health-bar-inner" v-bind:style="{ width: monsterHealth + '%' }">
                     <h4>{{ monsterHealth }}</h4>
                 </div>
             </div>
         </div>
         <section id="buttons">
             <div v-if="!isRunning">
+                <audio id="startSound">
+                    <source src="music/gunEmpty.mp3" type="audio/mpeg">
+                </audio>
                 <button class="start" type="button" v-on:click="start">Start Game!</button>
             </div>
             <div v-else>
+                <audio id="attackSound">
+                    <source src="music/throwKnife.mp3" type="audio/mpeg">
+                </audio>
                 <button class="attack" type="button" v-on:click="attack">Attack</button>
+                <audio id="specialSound">
+                    <source src="music/steelSword.mp3" type="audio/mpeg">
+                </audio>
                 <button class="special" type="button" v-on:click="special">Special</button>
+                <audio id="healSound">
+                    <source src="music/fireball.mp3" type="audio/mpeg">
+                </audio>
                 <button class="heal" type="button" v-on:click="heal">Heal</button>
+                <audio id="giveUpSound">
+                    <source src="music/scream.mp3" type="audio/mpeg">
+                </audio>
                 <button class="give-up" type="button" v-on:click="giveUp">Give Up!</button>
             </div>
         </section>
