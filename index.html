@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  	<!-- Character set -->
+    <meta charset="utf-8">
+    <!-- Responsive Web Page Viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Title -->
+    <title></title>
+    <!-- Boot Strap CSS-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <!-- Animate Stylesheet -->
+    <link rel="stylesheet" href="css/animate.css">
+    <!-- Font Awesome -->
+    <!-- <link rel="stylesheet" href="css/font-awesome.css"> -->
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=MedievalSharp" rel="stylesheet">
+    <!-- Reset CSS -->
+    <link rel="stylesheet" href="css/reset.css">
+    <!-- Custom Main CSS -->
+    <link rel="stylesheet" href="css/main.css">
+    
+  </head>
+  <body>
+    <div id="app">
+        <div class="header">
+            <h1>A Battle Game!</h1>
+        </div>
+        <div>
+            <div class="health-bar">
+                <img class="img-fluid mx-auto" src="img/soldier.png">
+                <h2>Player Health</h2>
+                <div id="player-health" class="health-bar-inner" v-bind:style="{ width: playerHealth + '%' }">
+                    <h4>{{ playerHealth }}</h4>
+                </div>
+            </div>
+            <div class="health-bar">
+                <img class="img-fluid mx-auto" src="img/monster.png">
+                <h2>Monster Health</h2>
+                <div class="health-bar-inner" v-bind:style="{ width: monsterHealth + '%' }">
+                    <h4>{{ monsterHealth }}</h4>
+                </div>
+            </div>
+        </div>
+        <section id="buttons">
+            <div v-if="!isRunning">
+                <button class="start" type="button" v-on:click="start">Start Game!</button>
+            </div>
+            <div v-else>
+                <button class="attack" type="button" v-on:click="attack">Attack</button>
+                <button class="special" type="button" v-on:click="special">Special</button>
+                <button class="heal" type="button" v-on:click="heal">Heal</button>
+                <button class="give-up" type="button" v-on:click="giveUp">Give Up!</button>
+            </div>
+        </section>
+    </div>
+    <!-- Jquery -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <!-- Popper Bootstrap Java Script -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <!-- Bootstrap Java Script -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+    <!-- Vue JS -->
+    <script src=" https://cdn.jsdelivr.net/npm/vue"></script>
+    <!-- Vue Router  -->
+    <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+    <!-- Custom Java Script -->
+    <script src="js/main.js" type="text/javascript"></script>
+  </body>
+</html>

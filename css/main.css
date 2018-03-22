@@ -1,0 +1,74 @@
+body {
+	background-image: url("../img/forest.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+img {
+	max-height: 300px;
+	display: block;
+}
+div {
+	text-align: center;
+}
+.health-bar-inner {
+	background-color: green;
+	height: 60%;
+	padding: 15px 0;
+}
+.health-bar {
+	width: 49%;
+	display: inline-block;
+	position: relative;
+	padding: 20px;
+}
+h1,
+h2,
+h4 {
+	display: inline-block;
+	width: auto;
+	font-family: 'MedievalSharp', cursive;
+	color: #fff;
+	text-shadow: 2px 3px 3px #000;
+}
+.header {
+	width: 100%;
+}
+h4 {
+	color: #fff;
+}
+button {
+	height: 100px;
+	width: 150px;
+	border-radius: 7px;
+	font-size: 22px;
+	margin-bottom: 30px;
+}
+button:hover {
+	cursor: pointer;
+}
+.start {
+	color: #fff;
+	background-color: #003399;
+}
+.attack {
+	background-color: #cc0000;
+}
+.special {
+	background-color: #ffad33;
+}
+.heal {
+	background-color: #0099ff;
+}
+.give-up {
+	background-color: #bfbfbf;
+}
+.red {
+	background-color: red;
+	height: 60%;
+	padding: 15px 0;
+}
+.low-health {
+	background-color: red;
+	height: 60%;
+	padding: 15px 0;
+}
