@@ -62,8 +62,10 @@ new Vue({
 			this.checkWin()
 		},
 		heal: function() {
-			document.getElementById("healSound").play()
-			if(this.counter < 1) {
+			if(this.counter >= 0) {
+				document.getElementById("healSound").play()
+			}
+			if(this.counter < 0) {
 				return
 			}
 			this.playerHealth += Math.floor(Math.random() * 16) + 10
@@ -91,20 +93,21 @@ new Vue({
 		},
 		newGame: function(outcome) {
 				if(confirm("You " + outcome + "! New game?")) {
+					if(outcome == 'Win'){
+					document.getElementById("healSound").play()
+						setTimeout(function() {
+							location.reload()
+						}, 1300)
+					}
+					if(outcome == 'lost'){
 					document.getElementById("giveUpSound").play()
-					setTimeout(function() {
-						location.reload()
-					}, 1050)
+						setTimeout(function() {
+							location.reload()
+						}, 1200)
+					}
 					// this.playerHealth = 100
 					// this.monsterHealth = 100
 					// this.counter = 0
-				} else {
-					document.getElementById("giveUpSound").play()
-					setTimeout(function() {
-						location.reload()
-					}, 1050)
-					// this.counter = 0
-					// this.start()
 				}
 			}
 	}
