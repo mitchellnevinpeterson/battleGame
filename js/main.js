@@ -42,10 +42,6 @@ new Vue({
 			setTimeout(function() {
 				location.reload()
 			}, 1100)
-			// this.isRunning = false
-			// this.playerHealth = 100
-			// this.monsterHealth = 100
-
 		},
 		attack: function() {
 			document.getElementById("attackSound").play()
@@ -92,23 +88,19 @@ new Vue({
 			console.log(this.counter)
 		},
 		newGame: function(outcome) {
-				if(confirm("You " + outcome + "! New game?")) {
-					if(outcome == 'Win'){
+				var result = confirm("You " + outcome + "! New game?") 
+					if(result == true && outcome == 'Win'){
 					document.getElementById("healSound").play()
 						setTimeout(function() {
 							location.reload()
 						}, 1300)
 					}
-					if(outcome == 'lost'){
+					else if(result == false || outcome == 'lost'){
 					document.getElementById("giveUpSound").play()
 						setTimeout(function() {
 							location.reload()
 						}, 1200)
 					}
-					// this.playerHealth = 100
-					// this.monsterHealth = 100
-					// this.counter = 0
-				}
 			}
 	}
 })
