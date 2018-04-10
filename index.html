@@ -38,7 +38,13 @@
                     <h4>{{ playerHealth }}</h4>
                 </div>
             </div>
-            <h1 v-if="!isRunning">Do You Have The Courage?</h1>
+            <p v-if="!isRunning">Instructions/Advice: You are a warrior trying to defeat a monster tormenting your village!<br>
+            You have already been struck with a venomous bit making your health slowly decline.<br>
+            Victory is unlikely unless you take advantage of healing!<br>
+            In order to heal you must attack first!<br>
+            1 Attck or Special = 1 Heal<br>
+            Good Luck!
+            </p>
             <div v-else class="health-bar">
                 <img class="img-fluid mx-auto" src="img/monster.png">
                 <h2>Monster</h2>

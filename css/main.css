@@ -25,8 +25,16 @@ h1,
 h2,
 h4 {
 	display: inline-block;
-	width: auto;
+	width: 50%;
 	font-family: 'MedievalSharp', cursive;
+	color: #fff;
+	text-shadow: 2px 3px 3px #000;
+}
+p {
+	font-weight: bold;
+	display: inline-block;
+	font-size: 20px;
+	width: 60%;
 	color: #fff;
 	text-shadow: 2px 3px 3px #000;
 }
