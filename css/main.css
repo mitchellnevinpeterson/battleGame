@@ -1,3 +1,6 @@
+html {
+	background-color: #000;
+}
 body {
 	background-image: url("../img/forest.jpg");
 	background-size: cover;
@@ -39,8 +42,9 @@ p {
 	text-shadow: 2px 3px 3px #000;
 }
 span {
-	text-decoration: underline;
-	text-shadow: none;
+	padding-top: 15px;
+	display: block;
+	text-shadow: 2px 3px 3px #000;
 }
 .header {
 	width: 100%;
@@ -83,4 +87,27 @@ button:hover {
 	background-color: red;
 	height: 60%;
 	padding: 15px 0;
+}
+@media(max-width: 414px) {
+	p{
+		font-size: 14px;
+		width: 95%;
+	}
+	.soldier {
+		max-height: 220px;
+	}
+	h1,
+	h2,
+	h4 {
+		font-size: 24px;
+	} 	
+}
+@media(max-width: 320px) {
+	button {
+	height: 65px;
+	width: 140px;
+	border-radius: 7px;
+	font-size: 22px;
+	margin-bottom: 30px;
+	}
 }

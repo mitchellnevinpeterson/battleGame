@@ -8,7 +8,7 @@
     <!-- Title -->
     <title></title>
     <!-- Youtube Repeater Background Music -->
-    <iframe src="http://www.youtuberepeater.com/watch?v=P3ZrN-m7VJA&name=Diablo+2+Soundtrack+Full" frameborder="0" width="0" height="0" allowfullscreen></iframe>
+    <iframe width="0" height="0" src="https://www.youtube.com/embed/LztNlv-0aWo?autoplay=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
     <!-- Boot Strap CSS-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
     <!-- Animate Stylesheet -->
@@ -23,6 +23,7 @@
     <link rel="stylesheet" href="css/main.css">
     
   </head>
+
   <body>
     <div id="app">
         <div class="header">
@@ -30,7 +31,7 @@
             <h1 v-else>Give Them No Mercy!</h1>
         </div>
         <div>
-            <img v-if="!isRunning" class="img-fluid mx-auto" src="img/soldier1.png">
+            <img v-if="!isRunning" class="soldier img-fluid mx-auto" src="img/soldier1.png">
             <div v-else class="health-bar">
                 <img class="img-fluid mx-auto" src="img/soldier.png">
                 <h2>Warrior</h2>
@@ -38,11 +39,11 @@
                     <h4>{{ playerHealth }}</h4>
                 </div>
             </div>
-            <p v-if="!isRunning"><span>Instructions/Advice:</span> You are a warrior trying to defeat a monster tormenting your village!<br>
-            You have already been struck with a venomous bit making your health slowly decline.<br>
-            Victory is unlikely unless you take advantage of healing!<br>
-            In order to heal you must attack first!<br>
-            1 Attck or Special = 1 Heal<br>
+            <p v-if="!isRunning"><span><em>Instructions/Advice:</em></span><span>You are a warrior trying to defeat a monster tormenting your village!</span>
+            <span>You have already been struck with a venomous bit making your health slowly decline.</span>
+            <span>Victory is unlikely unless you take advantage of healing!<br>
+            In order to heal you must attack first!</span>
+            <span>1 Attck or Special = 1 Heal</span>
             Good Luck!
             </p>
             <div v-else class="health-bar">
